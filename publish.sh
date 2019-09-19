@@ -1,6 +1,7 @@
 #!/bin/bash
 
-# Add --delete right before "output_prod" to have rsync remove files that are
-# deleted locally from the destination too. See README.md for an example.
-rsync -avze 'ssh -p 22' --delete staging/ benkler.com:showroom.benkler.com/stephan-roehl.de/
+# Shortcut to publish generated output with rsync and ssh
+
+#rsync -avze 'ssh -p 22' production/ domain.tld:public/
+rsync -avze 'ssh -p 22' --delete production/ domain.tld:public/
 if [ $? -ne 0 ]; then echo "Could not publish the site"; exit 1; fi
