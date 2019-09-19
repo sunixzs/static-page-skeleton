@@ -36,5 +36,8 @@
     "> 1% in DE",
     "ie 10",
     "ie 9"
-  ]
+  ],
+  "dependencies": {
+    "text": "requirejs/text"
+  }
 }
