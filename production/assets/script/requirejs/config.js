@@ -1,0 +1,1 @@
+var require={baseUrl:"assets/script"};

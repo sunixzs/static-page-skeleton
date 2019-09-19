@@ -1,0 +1,250 @@
+<!-- index.nunjucks -->
+{% extends "layout.nunjucks" %}
+
+{% set page = "home" %}
+
+{% block pageTitle %}static-page-skeleton{% endblock %}
+
+{% block content %}
+<div id="home"></div>
+
+<div id="about" class="background-color-highlight color-white">
+    <div class="content-centered">
+        <div class="content-space--left-right">
+            <div class="about">
+                {# <div class="about__background"></div> #}
+                <div class="about__portrait-wrap">
+                    <div class="about__portrait">
+                        <img src="{{ path.images }}content/portrait.jpg" alt="" />
+                    </div>
+                </div>
+                <div class="about__content content-space--top-bottom">
+                    <h1 class="header--large">About</h1>
+                    <p>
+                        Er hörte leise Schritte hinter sich. Das bedeutete nichts Gutes. Wer würde ihm schon folgen,
+                        spät in der
+                        Nacht und dazu noch in dieser engen Gasse mitten im übel beleumundeten Hafenviertel? Gerade
+                        jetzt, wo er das
+                        Ding seines Lebens gedreht hatte und mit der Beute verschwinden wollte!
+                    </p>
+                    <p>
+                        Hatte einer seiner zahllosen Kollegen dieselbe Idee gehabt, ihn beobachtet und abgewartet, um
+                        ihn nun um die
+                        Früchte seiner Arbeit zu erleichtern? Oder gehörten die Schritte hinter ihm zu einem der
+                        unzähligen
+                        Gesetzeshüter dieser Stadt, und die stählerne Acht um seine Handgelenke würde gleich
+                        zuschnappen? Er konnte
+                        die Aufforderung stehen zu bleiben schon hören.
+                        Gehetzt sah er sich um. Plötzlich erblickte er den schmalen Durchgang. Blitzartig drehte er sich
+                        nach rechts
+                        und verschwand zwischen den beiden Gebäuden. Beinahe wäre er dabei über den umgestürzten
+                        Mülleimer gefallen,
+                        der mitten im Weg lag. Er versuchte, sich in der Dunkelheit seinen Weg zu ertasten und
+                        erstarrte:
+                        Anscheinend gab es keinen anderen Ausweg aus diesem kleinen Hof als den Durchgang, durch den er
+                        gekommen
+                        war.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div id="service" class="content-centered">
+    <div class="content-space--left-right content-space--top-bottom">
+        <h2 class="header--large no-space-bottom">Leistungen</h2>
+
+        <div class="content-space--top-bottom">
+            <div class="grid grid--same-height smartphone--grid-space-16">
+                <div class="grid__item one-half tablet--one-whole smartphone--one-whole">
+                    <div class="interactive-image interactive-image--1">
+                        <span class="interactive-image__content">
+                            <span class="interactive-image__title">Leistung 1</span>
+                            <span class="interactive-image__description">
+                                Die manuelle Medizin beinhaltet ein vollständiges Untersuchungs- und Therapiekonzept der
+                                Schmerzzustände am Bewegungsapparat (Muskeln und Gelenke). Die mangelnde Beweglichkeit
+                                von Gelenkstrukturen und eingeschränkte Elastizität der Muskulatur wird verbessert und
+                                somit das Schmerzempfinden reduziert. Zudem werden neue Bewegungsmuster gezielt erlernt
+                                um das Schmerzgedächtnis zu reduzieren.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+                <div class="grid__item one-half tablet--one-whole smartphone--one-whole">
+                    <div class="interactive-image interactive-image--2">
+                        <span class="interactive-image__content">
+                            <span class="interactive-image__title">Spezielle<br />Leistung</span>
+                            <span class="interactive-image__description">
+                                Die spezielle Kiefergelenksbehandlung beinhaltet manualtherapeutische und osteopathische
+                                Techniken am Kiefergelenk. Diese Behandlungsmethode ist gerade bei Kopfschmerzen,
+                                Tinitus, Knirschen und Schluckbeschwerden von Vorteil.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+                <div class="grid__item one-half tablet--one-whole smartphone--one-whole">
+                    <div class="interactive-image interactive-image--3">
+                        <span class="interactive-image__content">
+                            <span class="interactive-image__title">Leistung 3</span>
+                            <span class="interactive-image__description">
+                                Die Physiotherapie beinhaltet Techniken der Massage und Krankengymnastik zur
+                                Wiederherstellung, Erhaltung und Förderung der Gesundheit, wobei die Schmerzreduktion,
+                                Stoffwechselverbesserung und Muskelaufbau im Zentrum der Behandlung stehen. Zu den
+                                ergänzenden Aufgaben gehört auch eine Vermittlung des eigenverantwortlichen Umgangs mit
+                                den körpereigenen Ressourcen.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+                <div class="grid__item one-half tablet--one-whole smartphone--one-whole">
+                    <div class="interactive-image interactive-image--4">
+                        <span class="interactive-image__content">
+                            <span class="interactive-image__title">Leistung 4</span>
+                            <span class="interactive-image__description">
+                                Nach einem ausführlichen Anamnesegespräch widmen wir uns Ihnen mit einer ausreichenden
+                                Behandlungszeit von 40 – 60 Minuten und legen dabei großen Wert auf eine ganzheitlich
+                                individuelle und befundorientierte Behandlung.
+                            </span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <script>
+                (function (d) {
+                    var elems = d.querySelectorAll(".interactive-image");
+                    for (var e = 0; e < elems.length; e++) {
+                        elems[e].addEventListener("click", function (evt) {
+                            evt.stopPropagation();
+                            if (this.classList.contains("active")) {
+                                this.classList.remove("active");
+                            } else {
+                                this.classList.add("active");
+                            }
+                        }, false);
+                    }
+                    d.addEventListener("click", function () {
+                        for (var e = 0; e < elems.length; e++) {
+                            elems[e].classList.remove("active");
+                        }
+                    });
+                })(document);
+            </script>
+        </div>
+    </div>
+</div>
+
+<div id="parallax">
+
+</div>
+
+<div id="image-grid">
+    <div class="content-centered">
+        <div class="content-space--left-right content-space--top-bottom">
+            <div class="image-grid">
+                <div class="image-grid__item image-grid__item--01"></div>
+                <div class="image-grid__item image-grid__item--02"></div>
+                <div class="image-grid__item image-grid__item--03"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="contact">
+    <div class="content-centered">
+        <h2 class="content-space--left-right content-space--top header--large">Kontakt</h2>
+    </div>
+    <div class="background-color-highlight color-white">
+        <div class="content-centered">
+            <div class="content-space--left-right content-space--top-bottom">
+                <div class="grid smartphone--grid-space-16">
+                    <div class="grid__item one-half smartphone--one-whole">
+                        <p class="font-bold">
+                            Firma
+                            <br />Name
+                        </p>
+                        <p>
+                            Adresse
+                            <br />12345 Stadt
+                        </p>
+                        <p>
+                            Tel. 0123-456789
+                            <br /><a href="#"
+                                onclick="this.href='mailto:'+['info','domain.tld'].join('@')">info<span>&#x40;</span>domain.tld</a>
+                        </p>
+                    </div>
+                    <div class="grid__item one-half smartphone--one-whole">
+                        <p>
+                            <span class="font-bold">Parkmöglichkeiten</span>
+                            <br />Hinterm Haus
+                        </p>
+                        <p>
+                            Zudem ist ein barrierefreier Zugang problemlos möglich, ein Aufzug ist vorhanden.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="opening" class="content-centered">
+    <div class="content-space--left-right content-space--top-bottom">
+        <h2 class="header--large">Zeiten</h2>
+        <div class="grid smartphone--grid-space-48">
+            <div class="grid__item one-half smartphone--one-whole">
+                <p>
+                    Montag – Dienstag
+                    <br />08:00 – 19:00 Uhr
+                </p>
+                <p>
+                    Donnerstag – Freitag
+                    <br />08:00 – 19:00 Uhr
+                </p>
+            </div>
+            <div class="grid__item one-half smartphone--one-whole">
+                <p class="header--middle">
+                    Termine
+                    <br />nach
+                    <br />Vereinbarung
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="map" class="content-centered">
+    <div class="ce-google-maps" id="gmap-opt-in">
+        <div class="gmap-opt-in-wrap">
+            <div class="gmap-opt-in-button-wrap">
+                <div class="gmap-opt-in-button">
+                    <div>Karte anzeigen</div>
+                    <div>Bitte klicken Sie, um die interaktive Google Map anzuzeigen. Dabei werden personenbezogene
+                        Daten wie Ihre IP-Adresse an Google in den USA übertragen.</div>
+                </div>
+            </div>
+        </div>
+    <script>
+        (function (d) {
+            var container = d.querySelector("#gmap-opt-in"),
+                wrap = d.querySelector("#gmap-opt-in .gmap-opt-in-wrap"),
+                btn = d.querySelector("#gmap-opt-in .gmap-opt-in-button"),
+                iframe = d.createElement("iframe"),
+                gmapSrc = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5250.238914824284!2d2.294016578807802!3d48.855932426246106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e6701fecd7f1bb%3A0xda0b3d0ab838114d!2sTour%20Eiffel%20-%20Parc%20du%20Champ-de-Mars%2C%2075007%20Paris%2C%20Frankreich!5e0!3m2!1sde!2sde!4v1568891680677!5m2!1sde!2sde";
+            btn.addEventListener("click", function () {
+                // set iframe attributes
+                iframe.setAttribute("style", "border:0;");
+                iframe.setAttribute("src", gmapSrc);
+                iframe.setAttribute("frameborder", "0");
+
+                // remove all in container
+                container.removeChild(wrap);
+
+                // add iframe to container
+                container.appendChild(iframe);
+            }, false);
+        })(document);
+    </script>
+</div>
+{% endblock%}

@@ -1,0 +1,76 @@
+.interactive-image {
+    position: relative;
+    display: block;
+
+    background-size: cover;
+    background-position: 50% 50%;
+
+    &--1 {
+        background-image: url(../images/content/physiotherapie-ainmiller-istock-805089574.jpg);
+    }
+
+    &--2 {
+        background-image: url(../images/content/physiotherapie-ainmiller-adobestock_154926569.jpg);
+    }
+
+    &--3 {
+        background-image: url(../images/content/physiotherapie-ainmiller-istock-613759168.jpg);
+    }
+
+    &--4 {
+        background-image: url(../images/content/physiotherapie-ainmiller-istock-918879768.jpg);
+    }
+
+    &__content {
+        //position: absolute;
+        //top: 0;
+        //left: 0;
+        //right: 0;
+        //bottom: 0;
+        //width: 100%;
+        //height: 100%;
+        //overflow: hidden;
+        //overflow-y: auto;
+        display: block;
+        color: white;
+        transition: background-color ease-in-out 0.3s;
+        min-height: 100%;
+        background-color: transparent;
+    }
+
+    &__title {
+        display: block;
+        background-color: rgba($color-highlight, 0.9);
+        transition: background-color ease-in-out 0.3s;
+        @include font-size-header--middle();
+        @include font-bold();
+        padding: 1rem 2rem;
+    }
+
+    &__description {
+        display: block;
+        opacity: 0;
+        //background-color: rgba($color-highlight, 0.9);
+        transition: opacity ease-in-out 0.3s;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    &.active,
+    #{$no-touch-selector} &:hover {
+        .interactive-image {
+            &__content {
+                background-color: rgba($color-highlight, 0.9);
+            }
+
+            &__title {
+                background-color: transparent;
+            }
+
+            &__description {
+                opacity: 1;
+            }
+        }
+    }
+}

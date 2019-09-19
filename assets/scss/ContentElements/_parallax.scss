@@ -1,0 +1,11 @@
+#parallax {
+    background-image: url(../images/content/physiotherapie-ainmiller-istock-951890054.jpg);
+    background-size: cover;
+    background-position: 50% 50%;
+    background-attachment: fixed;
+    height: 50vh;
+
+    @supports (-webkit-overflow-scrolling: touch) {
+        background-attachment: initial;
+    }
+}

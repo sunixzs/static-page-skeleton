@@ -1,0 +1,37 @@
+.image-grid {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 100% / 878 * 654;
+
+    &__item {
+        position: absolute;
+        $size: 48.75%;
+        width: $size;
+        height: 0;
+        
+        background-size: cover;
+        background-position: 50% 50%;
+
+        &--01 {
+            top: 0;
+            left: 0;
+            padding-bottom: $size / 428 * 316;
+            background-image: url(../images/content/physiotherapie-ainmiller-gallerie-1.jpg);
+        }
+
+        &--02 {
+            bottom: 0;
+            left: 0;
+            padding-top: $size / 428 * 316;
+            background-image: url(../images/content/physiotherapie-ainmiller-gallerie-2.jpg);
+        }
+
+        &--03 {
+            top: 0;
+            right: 0;
+            padding-bottom: $size / 428 * 654;
+            background-image: url(../images/content/physiotherapie-ainmiller-gallerie-3.jpg);
+        }
+    }
+}

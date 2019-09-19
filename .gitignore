@@ -1,0 +1,15 @@
+# editor stuff
+.vscode/sftp.json
+
+# packages
+node_modules
+vendor
+yarn.lock
+package-lock.json
+composer.lock
+*.log
+
+# output folders
+development
+staging
+public

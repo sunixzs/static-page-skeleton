@@ -1,0 +1,64 @@
+{
+    "name": "mab/app",
+    "description": "assets for this site",
+    "type": "library",
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "sunixzs/JSCookieNotice",
+                "version": "master",
+                "source": {
+                    "url": "https://github.com/sunixzs/JSCookieNotice.git",
+                    "type": "git",
+                    "reference": "master"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "sunixzs/Lightbox",
+                "version": "master",
+                "source": {
+                    "url": "https://github.com/sunixzs/Lightbox.git",
+                    "type": "git",
+                    "reference": "master"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "nk-o/jarallax",
+                "version": "master",
+                "source": {
+                    "url": "https://github.com/nk-o/jarallax.git",
+                    "type": "git",
+                    "reference": "master"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "iamdustan/smoothscroll",
+                "version": "master",
+                "source": {
+                    "url": "https://github.com/iamdustan/smoothscroll.git",
+                    "type": "git",
+                    "reference": "master"
+                }
+            }
+        }
+    ],
+    "require": {
+        "components/jquery": "^3.3",
+        "components/font-awesome": "^5.4",
+        "sunixzs/Lightbox": "master@dev",
+        "sunixzs/JSCookieNotice": "master@dev",
+        "components/jqueryui": "^1.12",
+        "nk-o/jarallax": "master@dev",
+        "iamdustan/smoothscroll": "master@dev"
+    }
+}

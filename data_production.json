@@ -1,0 +1,13 @@
+{
+    "baseUrl": "/",
+    "meta": {
+        "author": "author",
+        "copyright": "copyright",
+        "creator": "creator"
+    },
+    "path": {
+        "images": "assets/images/",
+        "script": "assets/script/",
+        "style": "assets/style/"
+    }
+}

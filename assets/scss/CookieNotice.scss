@@ -1,0 +1,87 @@
+@import "Variables/Base";
+
+#cookie-notice-wrap {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 200;
+
+    .cn {
+        background-color: rgba($color-highlight, 0.95);
+        color: white;
+        padding: 1rem 0 1rem 0;
+        position: relative;
+        box-shadow: 0 0 10px rgba(black, 0.1);
+
+        &__content {
+            position: relative;
+        }
+
+        &__header,
+        &__info {
+            display: block;
+            font-size: 14px;
+            line-height: 1.3;
+            margin-right: 4.75rem;
+        }
+
+        &__header {
+            @include font-bold();
+        }
+
+        &__confirm {
+            white-space: nowrap;
+            position: absolute;
+            top: 50%;
+            right: 0;
+            width: 4rem;
+            transform: translateY(-50%);
+            text-align: center;
+            padding: 0.25rem 0;
+            color: white;
+            font-size: 40px;
+            @include font-bold();
+            cursor: pointer;
+            transition: color ease-in-out 0.3s;
+
+            #{$no-touch-selector} &:hover {
+                color: $color-grey;
+            }
+        }
+
+        a {
+            color: white;
+
+            #{$no-touch-selector} &:hover {
+                color: $color-grey;
+            }
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .cn {
+            &__header,
+            &__info {
+                margin-right: 5.75rem;
+            }
+
+            &__confirm {
+                right: 1rem;
+            }
+        }
+    }
+
+    @media screen and (max-width: 480px) {
+        .cn {
+            &__info {
+                text-align: justify;
+            }
+
+            &__confirm {
+                width: 3rem;
+                font-size: 30px;
+            }
+        }
+    }
+}

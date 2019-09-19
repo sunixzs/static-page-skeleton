@@ -1,0 +1,12 @@
+#home {
+    background-image: url(../images/content/physiotherapie-ainmiller-istock-918879768.jpg);
+    background-size: cover;
+    background-position: 50% 50%;
+    background-attachment: fixed;
+    height: 100vh;
+    height: calc(100vh - 145px);
+
+    @supports (-webkit-overflow-scrolling: touch) {
+        background-attachment: initial;
+    }
+}

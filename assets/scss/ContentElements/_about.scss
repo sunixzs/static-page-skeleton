@@ -1,0 +1,63 @@
+.about {
+    position: relative;
+
+    //&__background {
+    //    position: absolute;
+    //    top: 0;
+    //    left: 0;
+    //    bottom: 0;
+    //    width: 45%;
+    //    background-size: cover;
+    //    background-position: 50% 50%;
+    //    background-repeat: no-repeat;
+    //    background-color: white;
+    //    background-image: url(../images/content/about.png);
+    //}
+
+    &__portrait-wrap {
+        position: absolute;
+        right: 40%;
+        bottom: 0;
+        width: 530px;
+    }
+
+    //&__portrait {
+    //}
+
+    &__content {
+        margin-left: 60%;
+    }
+
+    @include mq("(max-width: 900px)") {
+        &__portrait-wrap {
+            right: 50%;
+            width: 430px;
+        }
+
+        &__content {
+            margin-left: 50%;
+        }
+    }
+
+    @include mq("(max-width: 840px)") {
+        &__background {
+            display: none;
+        }
+
+        &__portrait-wrap {
+            position: static;
+            //margin-left: 25%;
+            width: auto;
+            border-bottom: 0.5rem solid white;
+        }
+        &__portrait {
+            width: 50%;
+            margin-left: 25%;
+            margin-bottom: 0.5rem;
+            padding-top: 1rem;
+        }
+        &__content {
+            margin-left: 0;
+        }
+    }
+}
