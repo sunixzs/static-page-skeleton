@@ -21,11 +21,11 @@ or `gulp build --production`
 
 In _./gulpfile.js/config.js_ all is defined for using the gulp tasks.
 
-In _./data_*.json_ you can define variables for _nunjucks_ p.e. to set an _baseUrl_.
+In _./data*.json_ you can define variables for _nunjucks_ p.e. to set an _baseUrl_.
 
 ## License
 
-MIT - see [license](LICENSE)
+MIT - sunixzs - see [license](LICENSE)
 
 [1]: https://mozilla.github.io/nunjucks/
 [2]: https://sass-lang.com/
