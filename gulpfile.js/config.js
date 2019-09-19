@@ -3,8 +3,7 @@
 /**
  * Configuration of all paths, patterns, etc for the used tasks.
  */
-
-module.exports = function(targetFolder) {
+module.exports = targetFolder => {
     return {
         // generate css from scss + autoprefixer
         styles: {
@@ -21,7 +20,7 @@ module.exports = function(targetFolder) {
             files: {
                 "./assets/script/src/requirejs/config.js": targetFolder + "assets/script/requirejs/",
                 "./assets/script/src/requirejs/require.js": targetFolder + "assets/script/requirejs/",
-                "./assets/script/src/requirejs/text.js": targetFolder + "assets/script/requirejs/",
+                "./node_modules/text/text.js": targetFolder + "assets/script/requirejs/",
                 "./assets/script/src/requirejs/plugins/async.js": targetFolder + "assets/script/requirejs/plugins/",
                 //"./assets/script/src/requirejs/plugins/css.js": targetFolder + "assets/script/requirejs/plugins/",
                 //"./assets/script/src/requirejs/plugins/json.js": targetFolder + "assets/script/requirejs/plugins/",

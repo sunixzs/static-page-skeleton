@@ -1,22 +1,22 @@
 "use strict";
 
-/**
- * Task to render css out of scss.
- */
-
 const sourcemaps = require("gulp-sourcemaps");
 const sass = require("gulp-sass");
 const postcss = require("gulp-postcss");
 const autoprefixer = require("autoprefixer");
 
-module.exports = function(gulp, plugins, ENV, config) {
-    return function() {
-        var mergedStreams = require("merge-stream")();
-        var scssPlugins = [autoprefixer()];
-        for (var key in config.styles.files) {
+/**
+ * Task to render css out of scss.
+ */
+module.exports = (gulp, plugins, ENV, config) => {
+    return () => {
+        let mergedStreams = require("merge-stream")();
+        let scssPlugins = [autoprefixer()];
+
+        for (let key in config.styles.files) {
             console.log(plugins.color("scss -> css: ", "BLUE") + plugins.color(key, "CYAN"));
             console.log(plugins.color("         to: ", "BLUE") + plugins.color(config.styles.files[key], "CYAN"));
-            var stream = gulp
+            let stream = gulp
                 .src(key)
                 // initialize sourcemaps
                 .pipe(ENV.mode.development(sourcemaps.init()))
@@ -66,6 +66,7 @@ module.exports = function(gulp, plugins, ENV, config) {
 
             mergedStreams.add(stream);
         }
+
         return mergedStreams.isEmpty() ? null : mergedStreams;
     };
 };

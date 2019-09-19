@@ -8,11 +8,9 @@
 
 const gulp = require("gulp");
 const plugins = require("gulp-load-plugins")();
-const color = require("gulp-color"); // BLACK RED GREEN YELLOW BLUE MAGENTA CYAN WHITE
-
 
 // set environment
-var ENV = {
+let ENV = {
     mode: require("gulp-mode")({
         modes: ["development", "staging", "production"]
     }),
@@ -33,35 +31,35 @@ if (ENV.mode.production()) {
 
 // print environment message
 console.log(
-    color("=== Set context to ", "BLUE") +
-        color(ENV.context, "CYAN") +
-        color(" with target folder ", "BLUE") +
-        color(ENV.targetFolder, "CYAN") +
-        color(" using data in ", "BLUE") +
-        color(ENV.dataFile, "CYAN") +
-        color(" ===", "BLUE")
+    plugins.color("=== Set context to ", "BLUE") +
+        plugins.color(ENV.context, "CYAN") +
+        plugins.color(" with target folder ", "BLUE") +
+        plugins.color(ENV.targetFolder, "CYAN") +
+        plugins.color(" using data in ", "BLUE") +
+        plugins.color(ENV.dataFile, "CYAN") +
+        plugins.color(" ===", "BLUE")
 );
 
 // load configuration for tasks
-var config = require("./config")(ENV.targetFolder);
+const config = require("./config")(ENV.targetFolder);
 
 /**
  * Method to load a task dynamically.
- * @param {string} task 
+ * @param {string} task
  */
-function getTask(task) {
+let getTask = task => {
     return require("./gulp-tasks/" + task)(gulp, plugins, ENV, config);
-}
+};
 
 // define scss tasks
 gulp.task("scss", getTask("scss"));
-gulp.task("watch_scss", function() {
+gulp.task("watch_scss", () => {
     return gulp.watch(config.styles.watchSource, gulp.series("scss"));
 });
 
 // define js single tasks
 gulp.task("js", getTask("js"));
-gulp.task("watch_js", function() {
+gulp.task("watch_js", () => {
     return gulp.watch(config.js.filesWatchSource, gulp.series("js"));
 });
 
@@ -70,7 +68,7 @@ gulp.task("js_merge", getTask("js_merge"));
 
 // define nunjucks tasks
 gulp.task("nunjucks", getTask("nunjucks"));
-gulp.task("watch_nunjucks", function() {
+gulp.task("watch_nunjucks", () => {
     return gulp.watch(config.nunjucks.filesWatchSource, gulp.series("nunjucks"));
 });
 

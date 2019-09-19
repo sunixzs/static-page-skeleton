@@ -3,9 +3,8 @@
 /**
  * Task to render html out of nunjucks files.
  */
-
-module.exports = function(gulp, plugins, ENV, config) {
-    return function() {
+module.exports = (gulp, plugins, ENV, config) => {
+    return () => {
         return (
             gulp
                 // get the sources
@@ -18,7 +17,7 @@ module.exports = function(gulp, plugins, ENV, config) {
                     })
                 )
 
-                // Renders template with nunjucks
+                // Render template with nunjucks
                 .pipe(
                     plugins.nunjucksRender({
                         path: [config.nunjucks.templatePath]

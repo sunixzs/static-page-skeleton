@@ -1,12 +1,12 @@
 "use strict";
 
-var babel = require("gulp-babel");
+const babel = require("gulp-babel");
 
 /**
  * Task to minify/uglify js files.
  */
-module.exports = function(gulp, plugins, ENV, config) {
-    return function() {
+module.exports = (gulp, plugins, ENV, config) => {
+    return () => {
         // Minifies the js files
         var mergedStreams = require("merge-stream")();
 
@@ -22,6 +22,7 @@ module.exports = function(gulp, plugins, ENV, config) {
 
             mergedStreams.add(stream);
         }
+        
         return mergedStreams.isEmpty() ? null : mergedStreams;
     };
 };

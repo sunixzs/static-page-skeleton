@@ -1,17 +1,16 @@
 "use strict";
 
-/**
- * Task to remove assets which are copied with 'assets_build'.
- */
-
 const glob = require("glob");
 const del = require("del");
 
-module.exports = function(gulp, plugins, ENV, config) {
-    return function(cb) {
-        var totalPromise = null;
+/**
+ * Task to remove assets which are copied with 'assets_build'.
+ */
+module.exports = (gulp, plugins, ENV, config) => {
+    return cb => {
+        let totalPromise = null;
 
-        config.assets.forEach(function(settings, index) {
+        config.assets.forEach((settings, index) => {
             if (settings.cleanupPattern) {
                 var filesToRemove = glob.sync(settings.cleanupPattern);
                 if (filesToRemove.length) {
@@ -22,12 +21,12 @@ module.exports = function(gulp, plugins, ENV, config) {
                             plugins.color(settings.cleanupPattern, "CYAN")
                     );
 
-                    var promise = Promise.resolve(del(settings.cleanupPattern));
+                    let promise = Promise.resolve(del(settings.cleanupPattern));
                     if (promise) {
                         totalPromise = promise;
                     }
                 } else {
-                    console.log(plugins.color("Assets: Nothing to remove with pattern: ", "BLUE") + plugins.color(settings.cleanupPattern, "CYAN"));
+                    console.log(plugins.color("Assets: Nothing to remove with pattern ", "BLUE") + plugins.color(settings.cleanupPattern, "CYAN"));
                 }
             } else {
                 console.log(plugins.color("Assets: Nothing to remove for", "BLUE") + plugins.color(" settings.assets[" + index + "]", "CYAN") + plugins.color(".", "BLUE"));

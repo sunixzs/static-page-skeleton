@@ -1,17 +1,16 @@
 "use strict";
 
+const glob = require("glob");
+
 /**
  * Task to copy assets into the document root.
  */
+module.exports = (gulp, plugins, ENV, config) => {
+    return () => {
+        let mergedStreams = require("merge-stream")();
 
-const glob = require("glob");
-
-module.exports = function(gulp, plugins, ENV, config) {
-    return function() {
-        var mergedStreams = require("merge-stream")();
-
-        config.assets.forEach(function(settings) {
-            var filesToCopy = glob.sync(settings.sourcePattern);
+        config.assets.forEach(settings => {
+            let filesToCopy = glob.sync(settings.sourcePattern);
 
             if (filesToCopy.length) {
                 console.log(
@@ -22,7 +21,8 @@ module.exports = function(gulp, plugins, ENV, config) {
                         plugins.color(" to folder: ", "BLUE") +
                         plugins.color(settings.targetBaseDirectory, "CYAN")
                 );
-                var stream = gulp.src(filesToCopy, { base: "./" }).pipe(gulp.dest(settings.targetBaseDirectory));
+                
+                let stream = gulp.src(filesToCopy, { base: "./" }).pipe(gulp.dest(settings.targetBaseDirectory));
                 mergedStreams.add(stream);
             } else {
                 console.log(plugins.color("Assets: Nothing to copy with pattern: ", "BLUE") + plugins.color(settings.sourcePattern, "CYAN"));
