@@ -1,26 +1,28 @@
 // navigation button for narrow devices
 (function(d) {
-    var btn = d.querySelector("#toggle-navigation"),
+    let btn = d.querySelector("#toggle-navigation"),
         html = d.querySelector("html"),
         actCls = "header-overlay-active",
         inactCls = "header-overlay-inactive",
         isActive = false;
 
-    var setActive = function() {
+    let setActive = () => {
         html.classList.remove(inactCls);
         html.classList.add(actCls);
         d.removeEventListener("click", setInactive);
         isActive = true;
     };
-    var setInactive = function() {
+
+    let setInactive = () => {
         html.classList.remove(actCls);
         html.classList.add(inactCls);
         d.addEventListener("click", setInactive);
         isActive = false;
     };
+
     btn.addEventListener(
         "click",
-        function(e) {
+        e => {
             e.preventDefault();
             e.stopPropagation();
             if (isActive) {

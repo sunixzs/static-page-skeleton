@@ -1,4 +1,4 @@
-var require = {
+let require = {
     baseUrl: "assets/script",
     //paths: {
         //style: "../style",

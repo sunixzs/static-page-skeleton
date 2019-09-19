@@ -2,12 +2,12 @@
  * sets/removes a class when the page is scrolled
  */
 (function(w, d) {
-    var ticking = false;
-    var isScrolled = false;
-    var html = d.querySelector("html");
-    w.addEventListener("scroll", function(e) {
+    let ticking = false;
+    let isScrolled = false;
+    let html = d.querySelector("html");
+    w.addEventListener("scroll", e => {
         if (!ticking) {
-            w.requestAnimationFrame(function() {
+            w.requestAnimationFrame(() => {
                 if (isScrolled && w.scrollY <= 0) {
                     isScrolled = false;
                     html.classList.remove("page-is-scrolled");
