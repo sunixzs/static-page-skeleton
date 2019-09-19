@@ -1,6 +1,6 @@
-# static page skelleton
+# static page skeleton
 
-A skelleton for building a static page. In this case a onepager using [nunjucks][1], [scss][2] and [gulp][3] to build html, css and js from the sources.
+A skeleton for building a static page. In this case a onepager using [nunjucks][1], [scss][2] and [gulp][3] to build html, css and js from the sources.
 
 ## Getting started
 
