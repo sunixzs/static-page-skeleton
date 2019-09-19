@@ -4,8 +4,10 @@ A skelleton for building a static page. In this case a onepager using [nunjucks]
 
 ## Getting started
 
-1. Download the main package
-1. Go in command line to the directory
+1. Download/checkout the main package and extract  
+`git clone https://github.com/sunixzs/static-page-skeleton.git`
+1. Go into the newly created directory  
+`cd static-page-skeleton`
 1. Get the composer packages with  
 `composer update`
 1. Get the npm packages with  
@@ -16,6 +18,14 @@ or `gulp build --staging`
 or `gulp build --production`
 
 `gulp build` combines several tasks for generating the output in the folders _./development_, _./staging_ and _./production_. Have a look into _./gulpfile.js_ where you can find many more tasks for _scss_, _js_ and _nunjucks_ with their _watch_-tasks while development.
+
+In _./gulpfile.js/config.js_ all is defined for using the gulp tasks.
+
+In _./data_*.json_ you can define variables for _nunjucks_ p.e. to set an _baseUrl_.
+
+## License
+
+MIT - see [license](LICENSE)
 
 [1]: https://mozilla.github.io/nunjucks/
 [2]: https://sass-lang.com/
