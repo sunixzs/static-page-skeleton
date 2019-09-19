@@ -1,9 +1,10 @@
 "use strict";
 
+var babel = require("gulp-babel");
+
 /**
  * Task to minify/uglify and merge some js files.
  */
-
 module.exports = function(gulp, plugins, ENV, config) {
     return function() {
         var mergedStreams = require("merge-stream")();
@@ -18,6 +19,7 @@ module.exports = function(gulp, plugins, ENV, config) {
 
             var stream = gulp
                 .src(config.js.collections[i].sources)
+                .pipe(babel(config.babel))
                 .pipe(plugins.concat(config.js.collections[i].outputFile))
                 .pipe(ENV.mode.production(plugins.uglify()))
                 .pipe(ENV.mode.staging(plugins.uglify()))

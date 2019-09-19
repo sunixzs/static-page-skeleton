@@ -74,6 +74,18 @@ module.exports = function(targetFolder) {
             filesWatchSource: ["./pages/**/*.+(html|nunjucks|njk)", "./templates/**/*.+(html|nunjucks|njk)"],
             sourcePattern: "./pages/**/*.+(html|nunjucks|njk)",
             templatePath: "./templates"
+        },
+
+        // configuration for babel(...)
+        babel: {
+            presets: [
+                [
+                    "@babel/env",
+                    {
+                        modules: false
+                    }
+                ]
+            ]
         }
     };
 };

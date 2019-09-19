@@ -4,13 +4,16 @@
   "main": "gulpfile.js",
   "license": "MIT",
   "scripts": {
-    "build_app": "gulp build_app"
+    "build": "gulp build"
   },
   "devDependencies": {
+    "@babel/core": "^7.6.0",
+    "@babel/preset-env": "^7.6.0",
     "autoprefixer": "^9.5.1",
     "del": "^5.0.0",
     "glob": "^7.1.4",
     "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0-beta.2",
     "gulp-clean": "^0.4.0",
     "gulp-cleanhtml": "^1.0.3",
     "gulp-color": "^0.0.2",

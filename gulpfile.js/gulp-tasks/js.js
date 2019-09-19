@@ -1,9 +1,10 @@
 "use strict";
 
+var babel = require("gulp-babel");
+
 /**
  * Task to minify/uglify js files.
  */
-
 module.exports = function(gulp, plugins, ENV, config) {
     return function() {
         // Minifies the js files
@@ -14,6 +15,7 @@ module.exports = function(gulp, plugins, ENV, config) {
             console.log(plugins.color("          to: ", "BLUE") + plugins.color(config.js.files[key], "CYAN"));
             var stream = gulp
                 .src(key)
+                .pipe(babel(config.babel))
                 .pipe(ENV.mode.production(plugins.uglify()))
                 .pipe(ENV.mode.staging(plugins.uglify()))
                 .pipe(gulp.dest(config.js.files[key]));
