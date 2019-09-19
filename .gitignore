@@ -12,4 +12,4 @@ composer.lock
 # output folders
 development
 staging
-public
+production
